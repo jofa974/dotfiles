@@ -4,7 +4,6 @@ set -euo pipefail
 echo "oh my zsh"
 sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
 
-
 if [[ $OSTYPE == 'darwin'* ]]; then
   echo 'macOS'
 
@@ -18,12 +17,18 @@ if [[ $OSTYPE == 'darwin'* ]]; then
     notion \
     tmux \
     font-inconsolata-nerd-font \
+    docker \
     colima \
     wget \
     uv \
     pyenv \
     brewsci/bio/pymol \
     tree \
-    direnv \
+    direnv
 
 fi
+
+git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpmgit clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
+
+mv ~/.config/nvim{,.bak}
+git clone git@github.com:jofa974/lazyvim.git ~/.config/nvim

@@ -106,14 +106,14 @@ source $ZSH/oh-my-zsh.sh
 # Created by `pipx` on 2025-02-10 13:58:59
 export PATH="$PATH:/Users/jonathan/.local/bin"
 
-# The next line updates PATH for the Google Cloud SDK.
-if [ -f '/Users/jonathan/Downloads/google-cloud-sdk/path.zsh.inc' ]; then . '/Users/jonathan/Downloads/google-cloud-sdk/path.zsh.inc'; fi
-
-# The next line enables shell command completion for gcloud.
-if [ -f '/Users/jonathan/Downloads/google-cloud-sdk/completion.zsh.inc' ]; then . '/Users/jonathan/Downloads/google-cloud-sdk/completion.zsh.inc'; fi
-
 eval "$(direnv hook zsh)"
 
 export PYENV_ROOT="$HOME/.pyenv"
 [[ -d $PYENV_ROOT/bin ]] && export PATH="$PYENV_ROOT/bin:$PATH"
 eval "$(pyenv init - zsh)"
+
+# The next line updates PATH for the Google Cloud SDK.
+if [ -f '/Users/jonathan/Utils/google-cloud-sdk/path.zsh.inc' ]; then . '/Users/jonathan/Utils/google-cloud-sdk/path.zsh.inc'; fi
+
+# The next line enables shell command completion for gcloud.
+if [ -f '/Users/jonathan/Utils/google-cloud-sdk/completion.zsh.inc' ]; then . '/Users/jonathan/Utils/google-cloud-sdk/completion.zsh.inc'; fi

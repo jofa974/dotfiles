@@ -1,3 +1,6 @@
 init.sh
 
 .git
+
+./config/gcloud
+./config/nvim
