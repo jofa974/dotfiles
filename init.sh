@@ -22,10 +22,11 @@ if [[ $OSTYPE == 'darwin'* ]]; then
     wget \
     uv \
     pyenv \
+    pyenv-virtualenv \
     brewsci/bio/pymol \
     tree \
-    direnv
-
+    direnv \
+    zoxide
 fi
 
 git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpmgit clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
