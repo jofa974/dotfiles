@@ -115,3 +115,5 @@ if [ -f '/Users/jonathan/Utils/google-cloud-sdk/path.zsh.inc' ]; then . '/Users/
 if [ -f '/Users/jonathan/Utils/google-cloud-sdk/completion.zsh.inc' ]; then . '/Users/jonathan/Utils/google-cloud-sdk/completion.zsh.inc'; fi
 
 export PATH="$PATH:/opt/nvim-linux-x86_64/bin"
+
+alias k="kubectl"
