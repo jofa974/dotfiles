@@ -1,2 +1,5 @@
 .config/gcloud
 .config/nvim
+*.zip
+google-cloud-sdk
+*.tar.gz

@@ -45,7 +45,7 @@ install_fonts() {
     log_info "Installing Nerd Fonts..."
     
     # Check if fonts are already installed
-    if fc-list | grep -q "Nerd Fonts" 2>/dev/null; then
+    if fc-list | grep -i "nerd" >/dev/null 2>&1; then
         log_success "Nerd Fonts already installed, skipping..."
         return 0
     fi
@@ -180,6 +180,16 @@ install_neovim() {
     fi
     
     log_success "Neovim installed successfully!"
+
+    log_info "Installing LazyVim..."
+    
+    if directory_exists ~/.config/nvim; then
+        log_warning "~/.config/nvim already exists. Backing up to ~/.config/nvim.bak"
+        mv ~/.config/nvim ~/.config/nvim.bak
+    fi
+
+    git clone git@github.com:jofa974/lazyvim.git ~/.config/nvim
+    log_success "LazyVim installed successfully!"
 }
 
 install_tpm() {
@@ -192,18 +202,6 @@ install_tpm() {
 
     git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
     log_success "TPM installed successfully!"
-}
-
-install_lazyvim() {
-    log_info "Installing LazyVim..."
-    
-    if directory_exists ~/.config/nvim; then
-        log_warning "~/.config/nvim already exists. Backing up to ~/.config/nvim.bak"
-        mv ~/.config/nvim ~/.config/nvim.bak
-    fi
-
-    git clone git@github.com:jofa974/lazyvim.git ~/.config/nvim
-    log_success "LazyVim installed successfully!"
 }
 
 install_google_cloud_cli() {
@@ -263,7 +261,6 @@ run_all() {
     install_apt_deps
     install_neovim
     install_tpm
-    install_lazyvim
     install_google_cloud_cli
     
     log_success "Environment setup completed!"
@@ -283,7 +280,6 @@ show_usage() {
     echo "  apt-deps               Install APT dependencies"
     echo "  neovim                 Install Neovim"
     echo "  tpm                    Install Tmux Plugin Manager"
-    echo "  lazyvim                Install LazyVim configuration"
     echo "  gcloud                 Install Google Cloud CLI"
     echo "  zsh                    Install Zsh"
     echo "  oh-my-zsh              Install Oh My Zsh"
@@ -327,9 +323,6 @@ main() {
             ;;
         "tpm")
             install_tpm
-            ;;
-        "lazyvim")
-            install_lazyvim
             ;;
         "gcloud")
             install_google_cloud_cli
