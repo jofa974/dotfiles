@@ -16,7 +16,7 @@ scrolling:
 font:
   # Normal font style
   normal:
-    family: "FiraCode Nerd Font Mono"
+    family: "Go-Mono"
     style: "Regular"  # Default for Linux/BSD: "monospace", Regular
 
   # Bold font style
