@@ -117,3 +117,4 @@ if [ -f '/Users/jonathan/Utils/google-cloud-sdk/completion.zsh.inc' ]; then . '/
 export PATH="$PATH:/opt/nvim-linux-x86_64/bin"
 
 alias k="kubectl"
+export PATH=$PATH:/usr/local/go/bin
