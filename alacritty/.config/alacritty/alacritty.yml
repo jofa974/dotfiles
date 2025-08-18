@@ -46,3 +46,7 @@ font:
 
   # Use built-in font for box drawing characters
   builtin_box_drawing: true  # Default: true 
+
+
+env:
+  TERM: xterm-256color
