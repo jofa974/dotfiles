@@ -103,6 +103,8 @@ source $ZSH/oh-my-zsh.sh
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
+. "$HOME/.local/bin/env"
+
 # Created by `pipx` on 2025-02-10 13:58:59
 export PATH="$PATH:/Users/jonathan/.local/bin"
 
@@ -117,4 +119,8 @@ if [ -f '/Users/jonathan/Utils/google-cloud-sdk/completion.zsh.inc' ]; then . '/
 export PATH="$PATH:/opt/nvim-linux-x86_64/bin"
 
 alias k="kubectl"
-export PATH=$PATH:/usr/local/go/bin:/home/jonathan/go/bin
+
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+
+export PATH=/home/jonathan/.local/bin:/home/jonathan/.local/bin:/home/jonathan/.local/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin:/opt/nvim-linux-x86_64/bin:/home/jonathan/.fzf/bin:/opt/nvim-linux-x86_64/bin:/usr/local/go/bin
+export PATH=$PATH:/home/jonathan/go/bin
